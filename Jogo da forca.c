@@ -12,15 +12,15 @@ int main(void) {
   scanf("%d", &opcao);
 
   switch (opcao) {
-  case 1:
-    printf("\n\n---------------------------");
-    printf("\n Seja bem-vindo as configurações ");
+    case 1:
+      printf("\n\n---------------------------");
+      printf("\n Seja bem-vindo as configurações ");
 
-    arq = fopen("Banco_palavras.txt", "w");
-    do {
+      arq = fopen("Banco_palavras.txt", "w");
+      do {
       printf("\n---------------------------");
 
-      printf("\n\nQual palavra deseja adicionar?");
+      printf("\n\nQual palavra deseja adicionar (Digite 'sair' para encerrar)?");
       scanf("%s", palavra);
 
       strc = strcmp(palavra, "sair");
@@ -33,13 +33,23 @@ int main(void) {
         fprintf(arq, "%s\n", palavra);
       }
 
-    } while (strc != 0);
-    break;
+      } while (strc != 0);
 
-  case 2:
-    printf("--- Bem vindo ao Jogo ---");
-    break;
+      fclose(arq);
+
+      break;
+
+    case 2 :
+
+      printf("--- Bem vindo ao Jogo ---");
+      break;
+
+    default:
+
+    printf("Valor não encontrado!");
+
+
   }
 
-  fclose(arq);
+
 }
