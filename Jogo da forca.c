@@ -162,7 +162,7 @@ int main(void) {
     FILE *arq_ler;
 
     arq_ler = fopen("Banco_palavras.txt", "r");//abre o arquivo com as palavras
-    
+
     if ((arq_ler) == NULL) {
       printf("Erro para abrir arquivo");
       exit(1);
