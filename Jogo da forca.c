@@ -112,7 +112,6 @@ int main(void) {
   char palavra[100];
   int opcao, strc;
   FILE *arq;
-
   printf("--- Bem-vindo ao Jogo da Forca ---");
   printf("\n\n ------ MENU ------ \n[ 1 ] - Configurar\n[ 2 ] - "
          "Jogar\n-------------------");
