@@ -1,0 +1,7 @@
+mesa
+copo
+pente
+camera
+ventilador
+borracha
+espelho
