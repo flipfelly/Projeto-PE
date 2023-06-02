@@ -41,68 +41,19 @@ char *escolhePalavra(char nomeArquivo[], char escolha[]) {
 // Função da intercafe do boneco(0 = não tem nada na forca, 1 = tem a cabeça...)
 void forca(int estado) {
   if (estado == 0) {
-    printf("\n-======="
-           "\n||     |"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n===");
+    printf("\n-=======\n||     |\n||\n||\n||\n||\n||\n===");
   } else if (estado == 1) {
-    printf("\n-======="
-           "\n||     |"
-           "\n||     0"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n===");
+    printf("\n-=======\n||     |\n||     0\n||\n||\n||\n||\n===");
   } else if (estado == 2) {
-    printf("\n-======="
-           "\n||     |"
-           "\n||     0"
-           "\n||     |"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n===");
+    printf("\n-=======\n||     |\n||     0\n||     |\n||\n||\n||\n===");
   } else if (estado == 3) {
-    printf("\n-======="
-           "\n||     |"
-           "\n||     0"
-           "\n||    /|"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n===");
+    printf("\n-=======\n||     |\n||     0\n||    /|\n||\n||\n||\n===");
   } else if (estado == 4) {
-    printf("\n-======="
-           "\n||     |"
-           "\n||     0"
-           "\n||    /|\\"
-           "\n||"
-           "\n||"
-           "\n||"
-           "\n===");
+    printf("\n-=======\n||     |\n||     0\n||    /|\\\n||\n||\n||\n===");
   } else if (estado == 5) {
-    printf("\n-======="
-           "\n||     |"
-           "\n||     0"
-           "\n||    /|\\"
-           "\n||    /"
-           "\n||"
-           "\n||"
-           "\n===");
+    printf("\n-=======\n||     |\n||     0\n||    /|\\\n||    /\n||\n||\n===");
   } else if (estado == 6) {
-    printf("\n-======="
-           "\n||     |"
-           "\n||     0"
-           "\n||    /|\\"
-           "\n||    / \\"
-           "\n||"
-           "\n||  PERDEU!"
-           "\n===");
+    printf("\n-=======\n||     |\n||     0\n||    /|\\\n||    / \\\n||\n||  PERDEU!\n===");
   }
 }
 
@@ -115,7 +66,7 @@ int main(void) {
 
   do{
   printf("\n--- Bem-vindo ao Jogo da Forca ---");
-  printf("\n\n ------ MENU ------ \n\n [ 1 ] - Adjetivos \n [ 2 ] - Objetos \n [ 3 ] - Animais \n\n ------------------\n\n [ 4 ] - Configurar"); 
+  printf("\n\n ------ MENU ------ \n\n [ 1 ] - Adjetivos \n [ 2 ] - Objetos \n [ 3 ] - Animais \n\n ------------------\n\n [ 4 ] - Configurar");
   printf("\n\nDigite uma das opções do menu: ");
   scanf("%d", &opcao);
 
@@ -197,7 +148,7 @@ int main(void) {
     }
   fclose(arq_ler);
   break;
-    
+
   case 2:
 
     printf("\n--- INÍCIO DE JOGO ---\n\n ");
@@ -274,7 +225,7 @@ int main(void) {
     }
     fclose(arq_ler2);
     break;
-    
+
     case 3:
 
     printf("\n--- INÍCIO DE JOGO ---\n\n ");
@@ -335,13 +286,16 @@ int main(void) {
 
       // verifica se o jogo acabou por erro
       if (erros3 == 6) { // perdeu
+        printf("\nPalavra: ");
+        for (int i = 0; i < strlen(p3); i++) {
+          printf("%c ", p3[i]);}
         forca(erros3);
         break;
       }
 
       // verifica se tela == palavra, logo, jogo ganho.
       if (strcmp(tela3, p3) == 0) {
-        printf("\nPalavra:  ");
+        printf("\nPalavra: ");
         for (int i = 0; i < strlen(tela3); i++) {
           printf("%c ", tela3[i]);
         }
@@ -350,14 +304,14 @@ int main(void) {
       }}
        fclose(arq_ler3);
     break;
-    
+
     case 4:
 
-      
+
     printf("\n\n--------------------------------\n Seja Bem-Vindo as Configurações\n-------------------------------- ");
-  
+
   do{
-    printf("\n\n ------ MENU ------ \n*opções de configuração*\n\n [ 1 ] - Adjetivos \n [ 2 ] - Objetos \n [ 3 ] - Animais"); 
+    printf("\n\n ------ MENU ------ \n*opções de configuração*\n\n [ 1 ] - Adjetivos \n [ 2 ] - Objetos \n [ 3 ] - Animais");
     printf("\n -    -    -    - \n Digite uma das opções para adicionar palavras: ");
     scanf("%d", &opcao2);
 
@@ -366,7 +320,7 @@ int main(void) {
       case 1:
 
       arq = fopen("banco_adjetivos.txt","a");
-        
+
       do {
       printf("\n--------------------------------\n\n[ Digite 'sair' para "
              "encerrar ]");
@@ -393,11 +347,11 @@ int main(void) {
     fclose(arq); // fecha o arquivo de escrita
 
     break;
-        
+
     case 2:
-      
+
        arq = fopen("banco_objetos.txt","a");
-        
+
       do {
       printf("\n--------------------------------\n\n[ Digite 'sair' para "
              "encerrar ]");
@@ -424,7 +378,7 @@ int main(void) {
 
     case 3:
        arq = fopen("banco_animais.txt","a");
-        
+
       do {
       printf("\n--------------------------------\n\n[ Digite 'sair' para "
              "encerrar ]");
@@ -460,12 +414,12 @@ int main(void) {
 
     }
   }while(resp=='s');
-      
-   
+
+
   }//switch case 1
 
   int strc1;
-    
+
   printf("\n-----------------------------------\nDeseja Jogar novamente (s ou n) ?");
   scanf(" %c", &repeat);
 
@@ -475,7 +429,7 @@ int main(void) {
     break;
   }
 
-  }while(repeat =='s');   
+  }while(repeat =='s');
 
-  
+
 }
