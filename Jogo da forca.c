@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Função de aleatoriedade na escolha de palavras
 char *escolhePalavra(char nomeArquivo[], char escolha[]) {
 
   char linha[100][50];
@@ -70,6 +71,7 @@ int main(void) {
   printf("\n\nDigite uma das opções do menu: ");
   scanf("%d", &opcao);
 
+  // recebe o valor escolhido no menu e da início ao jogo de acordo com a escolha
   switch (opcao) {
 
   case 1:
@@ -86,7 +88,7 @@ int main(void) {
       printf("Erro para abrir arquivo");
       exit(1);
     } else {
-      escolhePalavra("banco_adjetivos.txt", escolha);// chama a funcção para escolha aleatoria de palavras
+      escolhePalavra("banco_adjetivos.txt", escolha);// chama a função para escolha aleatoria de palavras
     }
     strcpy(p, escolhePalavra("banco_adjetivos.txt", escolha));//Copia o valor para a palavra a ser utilizada
 
@@ -120,7 +122,7 @@ int main(void) {
       int possivel_erro = 1; // 1 = sim, 0 = não
       for (int i = 0; i < strlen(tela); i++) {
 
-        if (letra == p[i]) { // a letra ta certa.
+        if (letra == p[i]) { // a letra esta certa.
           tela[i] = letra;
           possivel_erro = 0;
         }
@@ -319,7 +321,7 @@ int main(void) {
 
       case 1:
 
-      arq = fopen("banco_adjetivos.txt","a");
+      arq = fopen("banco_adjetivos.txt","a"); // "a" concatena os dados no final do arquivo
 
       do {
       printf("\n--------------------------------\n\n[ Digite 'sair' para "
