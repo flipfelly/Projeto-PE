@@ -5,3 +5,10 @@ camera
 ventilador
 borracha
 espelho
+pincel
+tomada
+secador
+toalha
+boneca
+computador
+calculadora
