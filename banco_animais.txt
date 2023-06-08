@@ -5,3 +5,9 @@ capivara
 rato
 urubu
 humano
+beluga
+besouro
+cabra
+camelo
+camundongo
+enguia
